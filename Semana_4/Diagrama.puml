@@ -25,12 +25,22 @@ class Docente {
 }
 
 class Asignatura {
-    + asignar_docente
-    + aprobar_reprobar_asignatura
+    - id_asignatura: string
+    - nombre_asignatura: string
+    + Asignatura(id_asignatura: string, nombre_asignatura: string)
+    + obtener_nombre_asignatura(): string
 }
 
 class Curso {
-    +inscribir_estudiante_curso
+    - semestre: string
+    - asignatura: Asignatura
+    - docente: Docente
+    - estudiantes_inscritos: List<Estudiante>
+    - calificaciones: Dictionary
+    + Curso(asignatura: Asignatura, docente: Docente, semestre: string)
+    + inscribir_estudiante_curso(estudiante: Estudiante): boolean
+    + asignar_calificacion(estudiante: Estudiante, calificacion: float): void
+    + determinar_aprobacion(estudiante: Estudiante): boolean
 }
 
 Persona <|-- Estudiante
