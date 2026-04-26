@@ -1,17 +1,17 @@
-@startuml
+@startuml  
 skinparam classAttributeIconSize 0
 
 class Persona {
-    - nombre
-    - apellido_paterno
-    - apellido_materno
-    - rut 
-    + nombre_completo
+    - nombre: string
+    - apellido_paterno: string
+    - apellido_materno: string
+    - rut: string
+    + obtener_nombre_completo: string   
 }
 
 class Estudiante {
-    - nota
-    - poseer_beca
+    - nota: float
+    - beca: float
 }
 
 class Docente {
@@ -26,17 +26,6 @@ class Asignatura {
 class Curso {
     +inscribir_estudiante_curso
 }
-
-class Pagos {
-    +calcular_pagos
-}
-
-class Becas {
-    +validar_becas
-}
-
-class Horario {}
-
 
 Persona <|-- Estudiante
 Persona <|-- Docente
