@@ -9,13 +9,19 @@ class Persona {
 }
 
 class Estudiante {
+    - carrera: string 
+    - arancel_base: float
     - porcentaje_beca: float
-}   + Estudiante(nombre: string, rut: string, porcentaje_beca: float)
+    + Estudiante(nombre: string, rut: string, carrera: string)
     + mostrar_informacion(): void
+    + aplicar_beca(porcentaje: float): void
+    + calcular_arancel_final(): float
+}
 
 class Docente {
     - especialidad: string
     + Docente(nombre: string, rut: string, especialidad: string)
+    + mostrar_informacion(): void
 }
 
 class Asignatura {
@@ -24,8 +30,6 @@ class Asignatura {
 }
 
 class Curso {
-    -arancel_base: float
-    +calcular_arancel_final(porcentaje_beca: float): float
     +inscribir_estudiante_curso
 }
 
