@@ -8,9 +8,9 @@ El sistema está diseñado para ejecutarse a través de la terminal. Para probar
 
 `CodigoS4.py`
 
-## Lenguaje y Tecnologías utilizadas 
-Lenguaje:** Python 3.14(64-bit)
-Modelado:** PlantUML (para diagrama de clases)
+## Lenguaje y tecnologías utilizadas 
+Lenguaje: Python 3.14(64-bit)
+Modelado: PlantUML (para diagrama de clases)
 
 ## Estructura del Proyecto
  `CodigoS4.py`: Contiene el código fuente completo del sistema, incluyendo las clases (`Persona`, `Estudiante`, `Docente`, `Asignatura`, `Curso`) y el bloque de ejecución principal.
