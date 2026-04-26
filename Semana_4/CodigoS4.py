@@ -31,4 +31,48 @@ class Persona:
         total_a_pagar = self._arancel_base - descuento 
         return total_a_pagar
     
-    
+class Docente(Persona):
+    def __init__(self, nombre: str, rut: str, especialidad: str):
+        super().__init__(nombre, rut)
+        self._especialidad = especialidad
+
+    def mostrar_informacion(self):
+        print(f"[Docente] {self._nombre} | RUT: {self._rut} | Especialidad: {self._especialidad}")
+
+class Asignatura:
+    def __init__(self, id_asignatura: str, nombre_asignatura: str):
+        self._id_asignatura = id_asignatura
+        self._nombre_asignatura = nombre_asignatura
+
+    def obtener_nombre_asignatura(self):
+        return self._nombre_asignatura
+
+class Curso:
+    def __init__(self, asignatura: Asignatura, docente: Docente, semestre: str):
+        self._asignatura = asignatura
+        self._docente = docente
+        self._semestre = semestre
+        self._estudiantes_inscritos = []
+        self._calificaciones = {}
+
+    def inscribir_estudiante_curso(self, estudiante: Estudiante):
+        if estudiante not in self._estudiantes_inscritos:
+            self._estudiantes_inscritos.append(estudiante)
+            self._calificaciones[estudiante.obtener_nombre()] = []     
+            print(f"Estudiante {estudiante.obtener_nombre()} inscrito en el curso de {self._asignatura.obtener_nombre_asignatura()}.")
+            return True
+        else:
+            print(f"El estudiante {estudiante.obtener_nombre()} ya está inscrito en este curso.")
+            return False
+
+    def asignar_calificacion(self, estudiante: Estudiante, calificacion: float):
+        nombre_est = estudiante.obtener_nombre()
+        if nombre_est in self._calificaciones:
+            if 1.0 <= calificacion <= 7.0:
+                self._calificaciones[nombre_est].append(calificacion)
+                print(f"Calificación {calificacion} asignada a {nombre_est} en {self._asignatura.obtener_nombre_asignatura()}.")
+            else:
+                print("Calificación inválida. Debe estar entre 1.0 y 7.0.")
+        else:
+            print(f"El estudiante {nombre_est} no está inscrito en este curso.")
+       
