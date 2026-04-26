@@ -75,4 +75,22 @@ class Curso:
                 print("Calificación inválida. Debe estar entre 1.0 y 7.0.")
         else:
             print(f"El estudiante {nombre_est} no está inscrito en este curso.")
+
+    def determinar_aprobacion(self, estudiante: Estudiante):
+        nombre_est = estudiante.obtener_nombre()
+        if nombre_est in self._calificaciones:
+            calificaciones = self._calificaciones[nombre_est]
+            if calificaciones:
+                promedio = sum(calificaciones) / len(calificaciones)
+                aprobado = promedio >= 4.0
+                estado = "aprobado" if aprobado else "reprobado"
+                print(f"El estudiante {nombre_est} ha {estado} con un promedio de {promedio:.2f}.")
+                return aprobado
+            else:
+                print(f"No hay calificaciones registradas para el estudiante {nombre_est}.")
+                return False
+        else:
+            print(f"El estudiante {nombre_est} no está inscrito en este curso.")
+            return False
+        
        
