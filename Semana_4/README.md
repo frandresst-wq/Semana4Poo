@@ -17,3 +17,5 @@ Modelado:** PlantUML (para diagrama de clases)
  `Diagrama.puml`: Archivo con el código fuente del modelo UML.
  `diagrama.png`: Imagen exportada del diagrama de clases estructural.
 
+## Diagrama de Clases UML
+![Diagrama UML](./DiagramaS4.png)
