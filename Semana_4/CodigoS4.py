@@ -92,5 +92,25 @@ class Curso:
         else:
             print(f"El estudiante {nombre_est} no está inscrito en este curso.")
             return False
-        
+
+# Ejemplo de uso
+if __name__ == "__main__":
+    
+    asignatura_poo = Asignatura("IT1617A-711-CH2026-T1", "Programación Orientada a Objetos")
+    docente_pablo = Docente("PABLO LASTRA CID", "18.144.701-K", "Astronomía")
+    est_franco = Estudiante("Franco", "19.155.619-4", "Ingeniería en Informática")  
+
+    docente_pablo.mostrar_informacion()
+    est_franco.mostrar_informacion()
+
+    est_franco.aplicar_beca(50)  # Aplica una beca del 50%
+    print(f"Arancel final a pagar por {est_franco.obtener_nombre()}: ${est_franco.calcular_arancel_final():.2f}")
+
+    curso_poo_sem1 = Curso(asignatura_poo, docente_pablo, "2026-1")
+    curso_poo_sem1.inscribir_estudiante_curso(est_franco)
+
+    curso_poo_sem1.asignar_calificacion(est_franco, 7.0)
+    curso_poo_sem1.asignar_calificacion(est_franco, 7.0)
+    curso_poo_sem1.determinar_aprobacion(est_franco)
+
        
