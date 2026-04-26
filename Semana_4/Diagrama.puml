@@ -45,3 +45,7 @@ class Curso {
 
 Persona <|-- Estudiante
 Persona <|-- Docente
+Curso  o-- Estudiante : inscribe >
+Curso --> Docente : asignado a >
+Curso --> Asignatura : pertenece a >
+@enduml  
