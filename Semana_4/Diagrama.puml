@@ -3,10 +3,9 @@ skinparam classAttributeIconSize 0
 
 class Persona {
     - nombre: string
-    - apellido_paterno: string
-    - apellido_materno: string
     - rut: string
-    + obtener_nombre_completo: string   
+    + Persona(nombre: string, rut: string)
+    + mostrar_informacion(): void  
 }
 
 class Estudiante {
