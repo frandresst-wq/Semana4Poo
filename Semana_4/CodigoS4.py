@@ -17,11 +17,18 @@ class Persona:
         self._porcentaje_beca = 0.0
 
     def mostrar_informacion(self):
-        
+        print(f"Nombre: {self._nombre}, RUT: {self._rut}, Carrera: {self._carrera}")
 
     def aplicar_beca(self, porcentaje: float):
-        self._porcentaje_beca = porcentaje
+        if 0 <= porcentaje <= 100:
+            self._porcentaje_beca = porcentaje
+            print(f"Beca aplicada: {porcentaje}% a {self._nombre}")
+        else:
+            print("Porcentaje de beca inválido. Debe estar entre 0 y 100.")
 
     def calcular_arancel_final(self):
         descuento = self._arancel_base * (self._porcentaje_beca / 100)
-        return self._arancel_base - descuento
+        total_a_pagar = self._arancel_base - descuento 
+        return total_a_pagar
+    
+    
