@@ -15,7 +15,7 @@ Modelado: PlantUML (para diagrama de clases)
 ## Estructura del Proyecto
  `CodigoS4.py`: Contiene el código fuente completo del sistema, incluyendo las clases (`Persona`, `Estudiante`, `Docente`, `Asignatura`, `Curso`) y el bloque de ejecución principal.
  `Diagrama.puml`: Archivo con el código fuente del modelo UML.
- `diagrama.png`: Imagen exportada del diagrama de clases estructural.
+ `DiagramaS4.png`: Imagen exportada del diagrama de clases estructural.
 
 ## Diagrama de Clases UML
 ![Diagrama UML](./DiagramaS4.png)
